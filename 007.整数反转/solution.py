@@ -8,9 +8,10 @@ class Solution:
     def reverse(self, x: int) -> int:
         y, res = abs(x), 0
         #因为x的范围在[-2^31,2^31-1]，所以如果x为负数时，其绝对值对应的范围就是1 << 31
+        #y的位数不断弹出，压入res。
         of = (1 << 31) - 1 if x > 0 else 1 << 31
         while y != 0:
-            res = res * 10 + y % 10
+            res = res * 10 + y % 10 
             if res > of: return 0
             y //= 10
         return res if x > 0 else -res
