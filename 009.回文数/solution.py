@@ -15,7 +15,7 @@ class Solution:
                 res = res * 10 + num % 10 
                 num //= 10
             
-        return num==res or num==res//10          
+            return num==res or num==res//10          
 
 
 if __name__ == "__main__":
